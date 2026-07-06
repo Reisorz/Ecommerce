@@ -10,7 +10,15 @@
 	</parent>
 	<groupId>com.mls</groupId>
 	<artifactId>Ecommerce</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${revision}</version>
+	<modules>
+		<module>service-product</module>
+		<module>service-user</module>
+		<module>service-order</module>
+		<module>service-payment</module>
+		<module>service-shopping-cart</module>
+	</modules>
+	<packaging>pom</packaging>
 	<name/>
 	<description/>
 	<url/>
@@ -28,6 +36,7 @@
 	</scm>
 	<properties>
 		<java.version>26</java.version>
+		<revision>0.0.1-SNAPSHOT</revision>
 	</properties>
 	<dependencies>
 		<dependency>

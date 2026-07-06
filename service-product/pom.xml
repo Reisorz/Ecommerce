@@ -3,15 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.1.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>com.mls</groupId>
+		<artifactId>Ecommerce</artifactId>
+		<version>${revision}</version>
 	</parent>
 	<groupId>com.mls.Ecommerce</groupId>
 	<artifactId>service-product</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name/>
+	<name>service-product</name>
 	<description/>
 	<url/>
 	<licenses>
@@ -28,6 +26,7 @@
 	</scm>
 	<properties>
 		<java.version>26</java.version>
+		<revision>0.0.1-SNAPSHOT</revision>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -58,6 +57,27 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.6.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>1.6.3</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -105,6 +125,11 @@
 								<path>
 									<groupId>org.projectlombok</groupId>
 									<artifactId>lombok</artifactId>
+								</path>
+								<path>
+									<groupId>org.mapstruct</groupId>
+									<artifactId>mapstruct-processor</artifactId>
+									<version>1.6.3</version>
 								</path>
 							</annotationProcessorPaths>
 						</configuration>
