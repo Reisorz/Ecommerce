@@ -1,4 +1,4 @@
-package com.mls.Ecommerce.service_product.mapper;
+package com.mls.Ecommerce.service_product.util;
 
 import com.mls.Ecommerce.service_product.dto.ProductCreateRequestDTO;
 import com.mls.Ecommerce.service_product.dto.ProductResponseDTO;

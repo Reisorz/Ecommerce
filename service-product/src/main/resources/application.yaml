@@ -1,3 +1,21 @@
 spring:
   application:
     name: service-product
+
+  datasource:
+    url: jdbc:postgresql://${PRODUCT_DB_HOST:localhost}:${PRODUCT_DB_PORT:5433}/ecommerce_products
+    username: ${PRODUCT_DB_USER}
+    password: ${PRODUCT_DB_PASS}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8081

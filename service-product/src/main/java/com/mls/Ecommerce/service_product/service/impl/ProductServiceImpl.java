@@ -1,7 +1,7 @@
 package com.mls.Ecommerce.service_product.service.impl;
 
 import com.mls.Ecommerce.service_product.dto.ProductCreateRequestDTO;
-import com.mls.Ecommerce.service_product.mapper.ProductMapper;
+import com.mls.Ecommerce.service_product.util.ProductMapper;
 import com.mls.Ecommerce.service_product.dto.ProductResponseDTO;
 import com.mls.Ecommerce.service_product.model.ProductEntity;
 import com.mls.Ecommerce.service_product.repository.ProductRepository;

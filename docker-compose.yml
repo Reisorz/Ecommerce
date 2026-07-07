@@ -1,0 +1,48 @@
+
+services:
+  product-db:
+    image: postgres:16-alpine
+    container_name: product-db
+    environment:
+      POSTGRES_DB: ecommerce_products
+      POSTGRES_USER: ${PRODUCT_DB_USER}
+      POSTGRES_PASSWORD: ${PRODUCT_DB_PASS}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - spring
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PRODUCT_DB_USER} -d ecommerce_products"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  service-product:
+    build: ./service-product
+    container_name: service-product
+    environment:
+      - PRODUCT_DB_HOST=${PRODUCT_DB_HOST}
+      - PRODUCT_DB_PORT=${PRODUCT_DB_PORT}
+      - PRODUCT_DB_USER=${PRODUCT_DB_USER}
+      - PRODUCT_DB_PASS=${PRODUCT_DB_PASS}
+    networks:
+      - spring
+    ports:
+      - "8081:8081"
+    depends_on:
+      product-db:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8081/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+
+networks:
+  spring:
+    driver: bridge
