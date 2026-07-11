@@ -1,5 +1,29 @@
 
 services:
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0
+    container_name: keycloak
+    command: start-dev
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+    ports:
+      - "8180:8080"
+    networks:
+      - spring
+
+  service-gateway:
+    build: ./service-gateway
+    container_name: service-gateway
+    environment: [ ]
+    networks:
+      - spring
+    ports:
+      - "8080:8080"
+    depends_on:
+      - service-product
+
   product-db:
     image: postgres:16-alpine
     container_name: product-db

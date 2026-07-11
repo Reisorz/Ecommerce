@@ -1,10 +1,10 @@
-package com.miguel.service_product;
+package com.mls.Ecommerce.service_gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServiceProductApplicationTests {
+class ServiceGatewayApplicationTests {
 
 	@Test
 	void contextLoads() {

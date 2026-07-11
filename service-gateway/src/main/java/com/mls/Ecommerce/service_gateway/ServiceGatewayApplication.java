@@ -1,13 +1,13 @@
-package com.miguel.service_product;
+package com.mls.Ecommerce.service_gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServiceProductApplication {
+public class ServiceGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServiceProductApplication.class, args);
+		SpringApplication.run(ServiceGatewayApplication.class, args);
 	}
 
 }
