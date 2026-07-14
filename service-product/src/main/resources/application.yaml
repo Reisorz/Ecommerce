@@ -1,6 +1,11 @@
 spring:
   application:
     name: service-product
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/realms/ecommerce-dev/protocol/openid-connect/certs
 
   datasource:
     url: jdbc:postgresql://${PRODUCT_DB_HOST:localhost}:${PRODUCT_DB_PORT:5433}/ecommerce_products
