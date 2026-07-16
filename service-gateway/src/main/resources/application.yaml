@@ -1,6 +1,11 @@
 spring:
   application:
     name: service-gateway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/realms/ecommerce-dev/protocol/openid-connect/certs
   cloud:
     gateway:
       server:
